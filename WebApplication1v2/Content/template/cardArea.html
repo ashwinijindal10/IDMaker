@@ -1,0 +1,36 @@
+﻿<div id="cardArea" droppable="$root.droppableSetting" class="id-container" ng-style="{
+                                               'width':card.width+'px',
+                                               'height':card.height+'px',
+                                               'background':(card.bgImage.url ?  'url(' + card.bgImage.url + ') no-repeat center' :'') ,
+                                               'background-size': '100% 100%',
+                                               'border-radius': card.border_radius+'px'
+                                             }">
+    <!--header image-->
+    <div class="id-header" ng-style="{'height':card.header.height+'%'  }">
+        <img alt="school logo" class="id-logo-img" ng-src="{{card.header.img.url}}" type="{{card.header.img.file.type}}" />
+    </div>
+    <!--body-->
+    <div class="id-body" ng-style="{  'height':(100-card.header.height)+'%'  }">
+        <div ng-hide="card.hideStdPhoto" draggable="$root.elementdragSetting" resizable="$root.resizableSetting" is-active="!printMode" class="photo-side"
+             ng-style="{
+                                                     'left':card.photo.x+'px' ,
+                                                     'top':card.photo.y+'px' ,
+                                                     'width':card.photo.width +'px',
+                                                     'height':card.photo.height+'px'
+
+                                                  }">
+            <img alt="student photo" class="id-std-img" ng-style="{ 'border-radius':card.photo.borderRadius+'px'}" ng-src="{{ (data.stdPhoto) ? data.stdPhoto : card.photo.img}}" />
+        </div>
+        <div class="info-side" ng-style="{
+                                                                        'width' :  (card.orientation=='h' ? (100-card.photo.width)+'%' :'100%'),
+                                                                        'height':  (card.orientation=='v' ?(100-card.photo.height)+'%' : '100%'),
+                                                                        'font-size' :card.font.size +'px',
+                                                                        'color' :card.font.color
+                                                                         }">
+            <div ng-include src="'Content/template/'+ (printMode ? 'Datalist.html' : 'FormatList.html' )"></div>
+
+        </div>
+
+    </div>
+
+</div>

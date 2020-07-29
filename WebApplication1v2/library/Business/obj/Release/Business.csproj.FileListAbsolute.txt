@@ -1,0 +1,17 @@
+E:\Project\Fab-March15\Online Id Card generater\Code\WebApplication1\Business\bin\Release\Business.dll.config
+E:\Project\Fab-March15\Online Id Card generater\Code\WebApplication1\Business\bin\Release\Business.dll
+E:\Project\Fab-March15\Online Id Card generater\Code\WebApplication1\Business\bin\Release\Business.pdb
+E:\Project\Fab-March15\Online Id Card generater\Code\WebApplication1\Business\obj\Release\Business.dll
+E:\Project\Fab-March15\Online Id Card generater\Code\WebApplication1\Business\obj\Release\Business.pdb
+E:\WebApplication1\Business\bin\Release\Business.dll.config
+E:\WebApplication1\Business\bin\Release\Business.dll
+E:\WebApplication1\Business\bin\Release\Business.pdb
+E:\WebApplication1\Business\obj\Release\Business.dll
+E:\WebApplication1\Business\obj\Release\Business.pdb
+E:\WebApplication1\Business\obj\Release\Business.csprojResolveAssemblyReference.cache
+E:\OnLineICard\Business\bin\Release\Business.dll.config
+E:\OnLineICard\Business\bin\Release\Business.dll
+E:\OnLineICard\Business\bin\Release\Business.pdb
+E:\OnLineICard\Business\obj\Release\Business.csprojResolveAssemblyReference.cache
+E:\OnLineICard\Business\obj\Release\Business.dll
+E:\OnLineICard\Business\obj\Release\Business.pdb

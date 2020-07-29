@@ -1,0 +1,10 @@
+F:\Projects\IDCardMaker\WebApplication1v2\bin\WebApplication1.dll.config
+F:\Projects\IDCardMaker\WebApplication1v2\bin\WebApplication1.dll
+F:\Projects\IDCardMaker\WebApplication1v2\bin\WebApplication1.pdb
+F:\Projects\IDCardMaker\WebApplication1v2\bin\AjaxControlToolkit.dll
+F:\Projects\IDCardMaker\WebApplication1v2\bin\Business.dll
+F:\Projects\IDCardMaker\WebApplication1v2\bin\Ionic.Zip.dll
+F:\Projects\IDCardMaker\WebApplication1v2\bin\Business.pdb
+F:\Projects\IDCardMaker\WebApplication1v2\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+F:\Projects\IDCardMaker\WebApplication1v2\obj\Debug\WebApplication1.dll
+F:\Projects\IDCardMaker\WebApplication1v2\obj\Debug\WebApplication1.pdb

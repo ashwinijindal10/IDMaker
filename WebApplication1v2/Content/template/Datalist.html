@@ -1,0 +1,15 @@
+﻿<div class="ele-li-data" ng-repeat="item in card.format" ng-style="{
+                                'left':item.x + 'px',
+                                'top': item.y + 'px',
+                                'width': item.width+'px',
+                                'height': item.height+'px' ,
+                                'color':item.font.color,
+                                'font-family' :item.font.type.value,
+                                'font-weight': item.font.style.value,
+                                'font-style': item.font.style.value,
+                                'font-size' :item.font.size +'px'
+                                }">
+    <pre class="content-title" > {{item.title}} </pre> <!--ng-style="{ 'width' : $root.fMaxLenght +'px'}"-->
+    <pre class="content-value">  {{data[item.key]}}</pre><!--{{card.isColonshow ? ":" : ""}}--> 
+
+</div>

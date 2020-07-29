@@ -1,0 +1,41 @@
+
+GO
+/****** Object:  Table [dbo].[StudentIDCardTemplates]    Script Date: 13-Mar-16 11:54:07 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[StudentIDCardTemplates](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](max) NOT NULL,
+	[Format] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+GO
+/****** Object:  StoredProcedure [dbo].[Sp_saveStudentIDCard]    Script Date: 13-Mar-16 11:54:09 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[Sp_saveStudentIDCard]
+      (@id int
+      ,@name varchar(max)
+      ,@format varchar(max)    
+	   )
+AS
+BEGIN
+
+	if( @id >0 )
+		update StudentIDCardTemplates set name=@name , [format]= @format  where id =@id
+	ELSE 
+		insert into StudentIDCardTemplates(name,[format]) values (@name,@format)
+
+	RETURN SCOPE_IDENTITY()
+END

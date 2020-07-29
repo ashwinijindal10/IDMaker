@@ -1,0 +1,17 @@
+﻿<div class="ele-li-format" is-active="!printMode"
+     resizable="$root.resizableSetting"
+     draggable="$root.elementdragSetting"
+     ng-repeat="item in card.format"
+     ng-style="{
+                                'left':   item.x + 'px',
+                                'top':    item.y + 'px',
+                                'width' : item.width+'px',
+                                'height': item.height+'px'
+                                }">
+
+    {{item.label}}
+
+    <button type="button" ng-click="card.format.splice($index, 1)" class="close">
+        <span aria-hidden="true">×</span>
+    </button>
+</div>

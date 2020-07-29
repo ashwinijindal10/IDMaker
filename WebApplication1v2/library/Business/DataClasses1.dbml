@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DamodarS_ID" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=182.50.133.109;Initial Catalog=DamodarS_ID;Persist Security Info=True;User ID=AnilS;Connect Timeout=3600" SettingsObjectName="Business.Properties.Settings" SettingsPropertyName="DamodarS_IDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MessagetoSchool" Member="MessagetoSchools">
+    <Type Name="MessagetoSchool">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mesage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_SP_Ragistration" Member="TBL_SP_Ragistrations">
+    <Type Name="TBL_SP_Ragistration">
+      <Column Name="Uid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ScholName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Phno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F1" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F2" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F3" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F4" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.School_Ragistration" Member="School_Ragistrations">
+    <Type Name="School_Ragistration">
+      <Column Name="Uid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ScholName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Phno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F1" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F2" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F3" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F4" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="School_Ragistration_SchoolIdFild" Member="SchoolIdFilds" ThisKey="Id" OtherKey="SchoolID" Type="SchoolIdFild" />
+      <Association Name="School_Ragistration_SchoolProfile" Member="SchoolProfiles" ThisKey="Id" OtherKey="id" Type="SchoolProfile" />
+      <Association Name="School_Ragistration_StudentDetail" Member="StudentDetails" ThisKey="Id" OtherKey="SchoolUID" Type="StudentDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolIdFilds" Member="SchoolIdFilds">
+    <Type Name="SchoolIdFild">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SchoolID" Type="System.String" DbType="NVarChar(50)" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="MyIdFild" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="lasUpdatedTime" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="School_Ragistration_SchoolIdFild" Member="School_Ragistration" ThisKey="SchoolID" OtherKey="Id" Type="School_Ragistration" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolProfile" Member="SchoolProfiles">
+    <Type Name="SchoolProfile">
+      <Column Name="Uid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SchoolName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PrincipalName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiectorName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Village" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tehsil" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phno1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phno2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LandLine1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LandLine2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SchoolLogo" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SchoolWebSite" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Emailid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SchoolEstb" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AuthSign" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="School_Ragistration_SchoolProfile" Member="School_Ragistration" ThisKey="id" OtherKey="Id" Type="School_Ragistration" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentDetail" Member="StudentDetails">
+    <Type Name="StudentDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SchoolUID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ScholarNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StudentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MotherName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BloodGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateofBarth" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Class" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Addres" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="StudentPhoto" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="School_Ragistration_StudentDetail" Member="School_Ragistration" ThisKey="SchoolUID" OtherKey="Id" Type="School_Ragistration" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Admin_Registration" Member="tbl_Admin_Registrations">
+    <Type Name="tbl_Admin_Registration">
+      <Column Name="Uid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ScholName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Phno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F1" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F2" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F3" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="F4" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentIDCardTemplates" Member="StudentIDCardTemplates">
+    <Type Name="StudentIDCardTemplate">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Format" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SecUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_AdminSchoolAlote" Method="SP_AdminSchoolAlote">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_UpdateStudentDetailStatus" Method="Sp_UpdateStudentDetailStatus">
+    <Parameter Name="SchoolUID" Parameter="schoolUID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholarNo" Parameter="scholarNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_AdminSchoolAloteAll" Method="SP_AdminSchoolAloteAll">
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_DeleteStudentDetail" Method="Sp_DeleteStudentDetail">
+    <Parameter Name="SchoolUID" Parameter="schoolUID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholarNo" Parameter="scholarNo" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_FildWiseStudentDetail" Method="Sp_FildWiseStudentDetail">
+    <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Insert_tbl_Admin_Registration" Method="SP_Insert_tbl_Admin_Registration">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pwd" Parameter="pwd" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholName" Parameter="scholName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Phno" Parameter="phno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_insertSchoolIDFild" Method="Sp_insertSchoolIDFild">
+    <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MyIdFild" Parameter="myIdFild" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="lasUpdatedTime" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_insertSchoolProfile" Method="Sp_insertSchoolProfile">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SchoolName" Parameter="schoolName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PrincipalName" Parameter="principalName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiectorName" Parameter="diectorName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Village" Parameter="village" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Tehsil" Parameter="tehsil" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="District" Parameter="district" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PIN" Parameter="pIN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Phno1" Parameter="phno1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phno2" Parameter="phno2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LandLine1" Parameter="landLine1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LandLine2" Parameter="landLine2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SchoolLogo" Parameter="schoolLogo" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="SchoolWebSite" Parameter="schoolWebSite" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Emailid" Parameter="emailid" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SchoolEstb" Parameter="schoolEstb" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AuthSign" Parameter="authSign" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_InsertschoolRegistration" Method="SP_InsertschoolRegistration">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pwd" Parameter="pwd" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholName" Parameter="scholName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Phno" Parameter="phno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_insertStudentDetail" Method="Sp_insertStudentDetail">
+    <Parameter Name="SchoolUID" Parameter="schoolUID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholarNo" Parameter="scholarNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StudentName" Parameter="studentName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="FatherName" Parameter="fatherName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MotherName" Parameter="motherName" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="BloodGroup" Parameter="bloodGroup" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateofBarth" Parameter="dateofBarth" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Class" Parameter="class" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EmailId" Parameter="emailId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Addres" Parameter="addres" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="StudentPhoto" Parameter="studentPhoto" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LastUpdated" Parameter="lastUpdated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Message" Method="SP_Message">
+    <Parameter Name="UID" Parameter="uID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Mesage" Parameter="mesage" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="updatetime" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Tbl_Adm_InsertschoolRegistration" Method="SP_Tbl_Adm_InsertschoolRegistration">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pwd" Parameter="pwd" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholName" Parameter="scholName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Phno" Parameter="phno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_tbl_Adm_UpdateRegistration" Method="SP_tbl_Adm_UpdateRegistration">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pwd" Parameter="pwd" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholName" Parameter="scholName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Phno" Parameter="phno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Tbl_Sp_InsertschoolRegistration" Method="SP_Tbl_Sp_InsertschoolRegistration">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pwd" Parameter="pwd" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholName" Parameter="scholName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Phno" Parameter="phno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_tbl_SP_UpdateRegistration" Method="SP_tbl_SP_UpdateRegistration">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pwd" Parameter="pwd" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholName" Parameter="scholName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Phno" Parameter="phno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_tbl_SP_UpdateRegistrationActive" Method="SP_tbl_SP_UpdateRegistrationActive">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_tbl_Update_Admin_Registration" Method="SP_tbl_Update_Admin_Registration">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pwd" Parameter="pwd" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholName" Parameter="scholName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Phno" Parameter="phno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_UpdateRegistration" Method="SP_UpdateRegistration">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Pwd" Parameter="pwd" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholName" Parameter="scholName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Phno" Parameter="phno" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_UpdateSchoolIDFild" Method="Sp_UpdateSchoolIDFild">
+    <Parameter Name="SchoolID" Parameter="schoolID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MyIdFild" Parameter="myIdFild" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="lasUpdatedTime" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_UpdateSchoolProfile" Method="Sp_UpdateSchoolProfile">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SchoolName" Parameter="schoolName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PrincipalName" Parameter="principalName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiectorName" Parameter="diectorName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Village" Parameter="village" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Tehsil" Parameter="tehsil" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="District" Parameter="district" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PIN" Parameter="pIN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Phno1" Parameter="phno1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Phno2" Parameter="phno2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LandLine1" Parameter="landLine1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LandLine2" Parameter="landLine2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SchoolLogo" Parameter="schoolLogo" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="SchoolWebSite" Parameter="schoolWebSite" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Emailid" Parameter="emailid" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SchoolEstb" Parameter="schoolEstb" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AuthSign" Parameter="authSign" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_UpdateSchoolWiseStudentDetailStatus" Method="Sp_UpdateSchoolWiseStudentDetailStatus">
+    <Parameter Name="SchoolUID" Parameter="schoolUID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_UpdateStudentDetail" Method="Sp_UpdateStudentDetail">
+    <Parameter Name="ScholarNoOld" Parameter="scholarNoOld" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SchoolUID" Parameter="schoolUID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholarNo" Parameter="scholarNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StudentName" Parameter="studentName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="FatherName" Parameter="fatherName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MotherName" Parameter="motherName" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="BloodGroup" Parameter="bloodGroup" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateofBarth" Parameter="dateofBarth" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Class" Parameter="class" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EmailId" Parameter="emailId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Addres" Parameter="addres" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="StudentPhoto" Parameter="studentPhoto" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="F1" Parameter="f1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F2" Parameter="f2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F3" Parameter="f3" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="F4" Parameter="f4" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LastUpdated" Parameter="lastUpdated" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_UpdateStudentPHOTOID" Method="Sp_UpdateStudentPHOTOID">
+    <Parameter Name="SchoolUID" Parameter="schoolUID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ScholarNo" Parameter="scholarNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="StudentPhotoID" Parameter="studentPhotoID" Type="System.String" DbType="NVarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_saveStudentIDCard" Method="Sp_saveStudentIDCard">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SecUID" Parameter="secUID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="format" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
